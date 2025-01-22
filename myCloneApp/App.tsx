@@ -5,6 +5,50 @@ export default function App() {
   return (
     <View style={styles.container}>
 
+
+    {/* 2. member button */}
+    <View>
+    {/* free icon
+    https://www.flaticon.com/free-icon/down-arrow_152415?term=arrow+down&page=1&position=91&origin=search&related_id=152415 */}
+      <View>
+      <TouchableOpacity onPress={() => Alert.alert('Member', 'Member Button pressed')}>
+          <Text style={styles.member_text}>member <Image source={require('./assets/down-arrow.png')}
+          style={{height: 18, width: 18}}/></Text>
+      </TouchableOpacity>
+
+    {/* Grid */}
+
+    </View>
+      <View style={styles.photo_grid}>
+      <Image source={require('./assets/gridPhotos/testimg1.jpg')}
+      style={styles.photo_grid_size}/>
+      <Image source={require('./assets/gridPhotos/testimg2.jpg')}
+      style={styles.photo_grid_size}/>
+      <Image source={require('./assets/gridPhotos/testimg3.jpg')}
+      style={styles.photo_grid_size}/>
+      </View>
+      <View style={styles.photo_grid}>
+      <Image source={require('./assets/gridPhotos/testimg4.jpg')}
+      style={styles.photo_grid_size}/>
+      <Image source={require('./assets/gridPhotos/testimg5.jpg')}
+      style={styles.photo_grid_size}/>
+      <Image source={require('./assets/gridPhotos/testimg6.jpg')}
+      style={styles.photo_grid_size}/>
+      </View>
+      <View style={styles.photo_grid}>
+      <Image source={require('./assets/gridPhotos/testimg7.jpg')}
+      style={styles.photo_grid_size}/>
+      <Image source={require('./assets/gridPhotos/testimg8.jpg')}
+      style={styles.photo_grid_size}/>
+      <Image source={require('./assets/gridPhotos/testimg9.jpg')}
+      style={styles.photo_grid_size}/>
+      </View>
+      
+
+
+    </View>
+
+
       {/* Tool bar */}
       <View style={styles.toolbar}>
         <View style={styles.button}>
@@ -73,4 +117,31 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
   },
+
+ member_button: {
+
+ },
+
+ member_text: {
+  fontSize: 18,
+  fontWeight: "bold",
+  textAlign: "center", 
+  borderWidth: 1,
+  borderColor: "#bebebe",
+  padding: 5,
+  margin: 20,
+  borderRadius: 5,
+ },
+
+ photo_grid: {
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  margin: 3,
+ },
+
+ photo_grid_size: {
+  height: 120,
+  width: 120,
+ },
+
 });
