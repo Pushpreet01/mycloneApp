@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert, Image, ScrollView } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* Header */}
+      <View>
       <View style={styles.header}>
         <View style={styles.profileSection}>
           <Image
@@ -28,6 +29,7 @@ export default function App() {
           </View>
         </View>
       </View>
+      </View>
 
       {/* Bio */}
       <View style={styles.bioSection}>
@@ -36,35 +38,8 @@ export default function App() {
         <Text style={styles.bioText}>you know we'll hype you up.</Text>
       </View>
 
-      {/* Member Button */}
-      <View>
-        <TouchableOpacity onPress={() => Alert.alert('Member', 'Member Button pressed')}>
-          <Text style={styles.member_text}>
-            member <Image source={require('./assets/down-arrow.png')} style={{ height: 18, width: 18 }} />
-          </Text>
-        </TouchableOpacity>
-
-        {/* Grid */}
-        <View style={styles.photo_grid}>
-          <Image source={require('./assets/gridPhotos/testimg1.jpg')} style={styles.photo_grid_size} />
-          <Image source={require('./assets/gridPhotos/testimg2.jpg')} style={styles.photo_grid_size} />
-          <Image source={require('./assets/gridPhotos/testimg3.jpg')} style={styles.photo_grid_size} />
-        </View>
-        <View style={styles.photo_grid}>
-          <Image source={require('./assets/gridPhotos/testimg4.jpg')} style={styles.photo_grid_size} />
-          <Image source={require('./assets/gridPhotos/testimg5.jpg')} style={styles.photo_grid_size} />
-          <Image source={require('./assets/gridPhotos/testimg6.jpg')} style={styles.photo_grid_size} />
-        </View>
-        <View style={styles.photo_grid}>
-          <Image source={require('./assets/gridPhotos/testimg7.jpg')} style={styles.photo_grid_size} />
-          <Image source={require('./assets/gridPhotos/testimg8.jpg')} style={styles.photo_grid_size} />
-          <Image source={require('./assets/gridPhotos/testimg9.jpg')} style={styles.photo_grid_size} />
-        </View>
-      </View>
-
-
-    {/* 2. member button */}
-    <View>
+   {/* 2. member button */}
+   <View>
     {/* free icon
     https://www.flaticon.com/free-icon/down-arrow_152415?term=arrow+down&page=1&position=91&origin=search&related_id=152415 */}
       <View>
@@ -76,8 +51,10 @@ export default function App() {
     {/* Grid */}
 
     </View>
+    <ScrollView>
       <View style={styles.photo_grid}>
-      <Image source={require('./assets/gridPhotos/testimg1.jpg')}
+        {/* testimg 1, 4, 7,8,9 are not showing, palaceholding testimg2 for */}
+      <Image source={require('./assets/gridPhotos/testimg2.jpg')}
       style={styles.photo_grid_size}/>
       <Image source={require('./assets/gridPhotos/testimg2.jpg')}
       style={styles.photo_grid_size}/>
@@ -85,7 +62,7 @@ export default function App() {
       style={styles.photo_grid_size}/>
       </View>
       <View style={styles.photo_grid}>
-      <Image source={require('./assets/gridPhotos/testimg4.jpg')}
+      <Image source={require('./assets/gridPhotos/testimg2.jpg')}
       style={styles.photo_grid_size}/>
       <Image source={require('./assets/gridPhotos/testimg5.jpg')}
       style={styles.photo_grid_size}/>
@@ -93,17 +70,15 @@ export default function App() {
       style={styles.photo_grid_size}/>
       </View>
       <View style={styles.photo_grid}>
-      <Image source={require('./assets/gridPhotos/testimg7.jpg')}
+      <Image source={require('./assets/gridPhotos/testimg2.jpg')}
       style={styles.photo_grid_size}/>
-      <Image source={require('./assets/gridPhotos/testimg8.jpg')}
+      <Image source={require('./assets/gridPhotos/testimg2.jpg')}
       style={styles.photo_grid_size}/>
-      <Image source={require('./assets/gridPhotos/testimg9.jpg')}
+      <Image source={require('./assets/gridPhotos/testimg2.jpg')}
       style={styles.photo_grid_size}/>
       </View>
-      
-
-
-    </View>
+      </ScrollView>
+      </View>
 
 
       {/* Tool bar */}
@@ -239,7 +214,7 @@ const styles = StyleSheet.create({
  },
 
  photo_grid_size: {
-  height: 120,
-  width: 120,
+  height: 90,
+  width: 90,
  },
 });
